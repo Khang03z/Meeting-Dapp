@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Room DApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.7.4/dist/web3.min.js"></script>
+</head>
+<body>
+
+    <button onclick="loadRooms()">View List room</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody id="roomList"></tbody>
+    </table>
+    
+    <div class="container">
+        <h1>Meeting Room DApp</h1>
+        
+        <button id="connect-wallet">Connect Wallet</button>
+        <p id="wallet-address">Not connected</p>
+
+        <div class="card">
+            <h3>Create Room</h3>
+            <input type="text" id="roomName" placeholder="Room Name">
+            <button onclick="createRoom()">Create</button>
+        </div>
+
+        <div class="card">
+            <h3>Join Room</h3>
+            <input type="number" id="joinRoomId" placeholder="Room ID">
+            <button onclick="joinRoom()">Join</button>
+        </div>
+
+        <div class="card">
+            <h3>Leave Room</h3>
+            <input type="number" id="leaveRoomId" placeholder="Room ID">
+            <button onclick="leaveRoom()">Leave</button>
+        </div>
+
+        <div class="card">
+            <h3>Add Task</h3>
+            <input type="number" id="taskRoomId" placeholder="Room ID">
+            <input type="text" id="taskDesc" placeholder="Task Description">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <div class="card">
+            <h3>Complete Task</h3>
+            <input type="number" id="completeRoomId" placeholder="Room ID">
+            <input type="number" id="taskIndex" placeholder="Task Index">
+            <button onclick="completeTask()">Complete</button>
+        </div>
+
+        <div class="card">
+            <h3>Get Room Members</h3>
+            <input type="number" id="membersRoomId" placeholder="Room ID">
+            <button onclick="getRoomMembers()">Get Members</button>
+            <p id="room-members"></p>
+        </div>
+
+        <div id="loading" class="hidden">Processing...</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
